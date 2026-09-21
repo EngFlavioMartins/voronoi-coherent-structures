@@ -43,7 +43,7 @@ def bounded_cells(points, bounds=(0, 2, 0, 1)):
     return cells
 
 
-def _field(ax, tracks, index, chi, bounds, trails=True):
+def _field(ax, tracks, index, chi, bounds, trails=True, arrows=True):
     points = tracks[index]
     cells = bounded_cells(points, bounds)
     collection = PolyCollection(cells, array=chi, cmap=CMAP, clim=(-1, 1),
@@ -55,7 +55,7 @@ def _field(ax, tracks, index, chi, bounds, trails=True):
         for particle in range(0, tracks.shape[1], max(1, tracks.shape[1]//48)):
             trail = tracks[start:index+1, particle]
             ax.plot(trail[:, 0], trail[:, 1], color=INK, lw=1.0, alpha=0.72)
-            if len(trail) > 1:
+            if arrows and len(trail) > 1:
                 ax.annotate("", xy=trail[-1], xytext=trail[-2],
                             arrowprops=dict(arrowstyle="-|>", color=INK, lw=1.0, mutation_scale=12))
     ax.scatter(points[:, 0], points[:, 1], s=1.6, color=INK, alpha=0.5, linewidths=0)
@@ -82,7 +82,7 @@ def save_figures(tracks, times, result, out, bounds=(0, 2, 0, 1), *, demo=True):
     # A compact, deliberately typographic-free diagram for repository/site headers.
     fig = plt.figure(figsize=(9.6, 6), facecolor=PAPER)
     ax = fig.add_axes([0.035, 0.055, 0.93, 0.89])
-    _field(ax, tracks, len(times)-1, result.chi, bounds)
+    _field(ax, tracks, len(times)-1, result.chi, bounds, arrows=False)
     ax.set_axis_off()
     # The embedding caption supplies the method, sample count and time. Keep the
     # compact header free of microtext so the coherent motion stays legible.
