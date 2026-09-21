@@ -82,3 +82,5 @@ Checks cover no-through-flow boundaries, numerical divergence, integration conve
 [Martins & Rival (2021), A Voronoi-tessellation-based approach for detection of coherent structures in sparsely-seeded flows](https://arxiv.org/abs/2103.09884).
 
 The newly written code and generated artwork are under the [MIT licence](LICENSE). The linked paper retains its own licence. [Contributions](CONTRIBUTING.md) are welcome.
+
+Plotting uses bundled IBM Plex Sans fonts under their separate [SIL Open Font Licence](src/voronoi_coherence/fonts/OFL.txt). No system font installation is required.

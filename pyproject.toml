@@ -21,5 +21,9 @@ voronoi-coherence = "voronoi_coherence.cli:main"
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.package-data]
+voronoi_coherence = ["fonts/*.ttf", "fonts/*.txt", "fonts/*.md"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+filterwarnings = ["error:Glyph .* missing from font.*:UserWarning"]

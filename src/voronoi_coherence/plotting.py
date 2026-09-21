@@ -4,9 +4,13 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from matplotlib import font_manager
 from matplotlib.collections import PolyCollection
 from matplotlib.colors import LinearSegmentedColormap
 from scipy.spatial import Voronoi
+
+for font_name in ["IBMPlexSans-Regular.ttf", "IBMPlexSans-Medium.ttf"]:
+    font_manager.fontManager.addfont(Path(__file__).parent / "fonts" / font_name)
 
 INK, TEAL, PURPLE, PAPER = "#24283e", "#288f91", "#7960af", "#f4f5f8"
 CMAP = LinearSegmentedColormap.from_list("coherence", [PURPLE, "#ebe8ef", TEAL])
@@ -62,7 +66,7 @@ def _field(ax, tracks, index, chi, bounds, trails=True):
 def save_figures(tracks, times, result, out, bounds=(0, 2, 0, 1), *, demo=True):
     out = Path(out)
     out.mkdir(parents=True, exist_ok=True)
-    plt.rcParams.update({"font.family": "DejaVu Sans", "svg.fonttype": "path",
+    plt.rcParams.update({"font.family": "IBM Plex Sans", "svg.fonttype": "path",
                          "svg.hashsalt": "voronoi-coherence", "text.color": INK,
                          "axes.labelcolor": INK, "axes.spines.top": False, "axes.spines.right": False})
     fig, axes = plt.subplots(3, 1, figsize=(9, 13), constrained_layout=True)
