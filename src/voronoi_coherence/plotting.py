@@ -48,12 +48,12 @@ def _field(ax, tracks, index, chi, bounds, trails=True):
     if trails and index > 0:
         # Each short curve follows one of the integrated tracers, not a decorative spiral.
         start = max(0, index - max(3, len(tracks)//12))
-        for particle in range(0, tracks.shape[1], max(1, tracks.shape[1]//72)):
+        for particle in range(0, tracks.shape[1], max(1, tracks.shape[1]//48)):
             trail = tracks[start:index+1, particle]
-            ax.plot(trail[:, 0], trail[:, 1], color=INK, lw=0.65, alpha=0.62)
+            ax.plot(trail[:, 0], trail[:, 1], color=INK, lw=1.0, alpha=0.72)
             if len(trail) > 1:
                 ax.annotate("", xy=trail[-1], xytext=trail[-2],
-                            arrowprops=dict(arrowstyle="->", color=INK, lw=0.6, mutation_scale=5))
+                            arrowprops=dict(arrowstyle="-|>", color=INK, lw=1.0, mutation_scale=12))
     ax.scatter(points[:, 0], points[:, 1], s=1.6, color=INK, alpha=0.5, linewidths=0)
     ax.set(xlim=bounds[:2], ylim=bounds[2:], aspect="equal")
     return collection
@@ -77,14 +77,11 @@ def save_figures(tracks, times, result, out, bounds=(0, 2, 0, 1), *, demo=True):
 
     # A compact, deliberately typographic-free diagram for repository/site headers.
     fig = plt.figure(figsize=(9.6, 6), facecolor=PAPER)
-    ax = fig.add_axes([0.055, 0.125, 0.89, 0.72])
+    ax = fig.add_axes([0.035, 0.055, 0.93, 0.89])
     _field(ax, tracks, len(times)-1, result.chi, bounds)
     ax.set_axis_off()
-    fig.text(0.055, 0.92, "NEIGHBOUR PERSISTENCE", size=11, color=INK, weight="medium")
-    fig.text(0.945, 0.92, "VORONOI / LAGRANGIAN", size=8, color="#777c90", ha="right")
-    label = "Computed double-gyre trajectories" if demo else "Computed particle trajectories"
-    fig.text(0.055, 0.08, label, size=10, color=INK)
-    fig.text(0.945, 0.08, f"{tracks.shape[1]} tracers · t = {times[-1]:g}", size=9, color="#777c90", ha="right")
+    # The embedding caption supplies the method, sample count and time. Keep the
+    # compact header free of microtext so the coherent motion stays legible.
     fig.savefig(out / "header.svg", facecolor=PAPER, metadata={"Date": None})
     fig.savefig(out / "header.png", facecolor=PAPER, dpi=150)
     plt.close(fig)
