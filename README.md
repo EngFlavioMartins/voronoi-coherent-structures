@@ -1,6 +1,8 @@
 # Voronoi coherent structures
 
-![Computed double-gyre motion, with 784 Voronoi cells coloured by neighbour-persistence coherence and overlaid particle trails](docs/assets/header.svg)
+**Coherent structures in sparse particle tracks, from persistent Voronoi neighbours.**
+
+![Voronoi cells of 784 double-gyre tracers coloured by neighbour-persistence coherence, with short trails of their recent motion](docs/assets/render.webp)
 
 A Python companion to the Voronoi-based coherent-structure work of Martins and Rival. It integrates a double-gyre example, counts persistent Voronoi neighbours and computes a continuous spectral colour for each trajectory.
 
@@ -77,9 +79,21 @@ python -m pytest -q
 
 Checks cover no-through-flow boundaries, numerical divergence, integration convergence, rigid-frame invariance, a known two-group spectral case, Voronoi coverage, 3D input and invalid data. See [validation notes](docs/validation.md).
 
-## Reference and licence
+## Website image
 
-[Martins & Rival (2021), A Voronoi-tessellation-based approach for detection of coherent structures in sparsely-seeded flows](https://arxiv.org/abs/2103.09884).
+```bash
+pip install pyvista cmcrameri
+python scripts/render/compute_coherence.py      # dense example: 784 tracers, t = 0-20, seed 7
+pvpython scripts/render/render_coherence.py outputs/render/voronoi-coherence.png
+```
+
+## Citing
+
+This code accompanies F. A. C. Martins and D. E. Rival (2021), A Voronoi-tessellation-based approach for detection of coherent structures in sparsely-seeded flows, arXiv:2103.09884, [doi:10.48550/arXiv.2103.09884](https://doi.org/10.48550/arXiv.2103.09884).
+
+GitHub's *Cite this repository* button uses [CITATION.cff](CITATION.cff).
+
+## Licence
 
 The newly written code and generated artwork are under the [MIT licence](LICENSE). The linked paper retains its own licence. [Contributions](CONTRIBUTING.md) are welcome.
 

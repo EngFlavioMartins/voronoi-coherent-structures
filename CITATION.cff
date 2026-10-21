@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+title: "Voronoi coherent structures"
+type: software
+license: MIT
+authors:
+  - family-names: Martins
+    given-names: Flavio A. C.
+    orcid: https://orcid.org/0000-0002-1374-5760
+repository-code: "https://github.com/EngFlavioMartins/voronoi-coherent-structures"
+preferred-citation:
+  type: article
+  title: "A Voronoi-Tessellation-Based Approach for Detection of Coherent Structures in Sparsely-Seeded Flows"
+  authors:
+    - family-names: Martins
+      given-names: Flavio A. C.
+    - family-names: Rival
+      given-names: D. E.
+  journal: "arXiv"
+  year: 2021
+  doi: "10.48550/arXiv.2103.09884"
+  url: "https://arxiv.org/abs/2103.09884"
