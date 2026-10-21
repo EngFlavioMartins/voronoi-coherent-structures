@@ -8,10 +8,8 @@ seed 7) with this package, then writes for ParaView:
               that tapers towards the tail
   heads.vtp   the same tracers at t = 20
 """
-import json
 from pathlib import Path
 
-import cmcrameri.cm as cmc
 import numpy as np
 import pyvista as pv
 from scipy.spatial import Voronoi
@@ -60,6 +58,4 @@ OUT.mkdir(parents=True, exist_ok=True)
 cells.save(OUT / "cells.vtp")
 trails.save(OUT / "trails.vtp")
 heads.save(OUT / "heads.vtp")
-(Path(__file__).parent / "lipari.json").write_text(json.dumps(
-    {"lipari": [float(v) for q in np.linspace(0, 1, 65) for v in (2 * q - 1, *cmc.lipari(0.08 + 0.84 * q)[:3])]}))
 print("wrote", OUT)
