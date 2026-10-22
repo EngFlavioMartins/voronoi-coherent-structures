@@ -1,0 +1,14 @@
+Voronoi coherent structures
+Copyright 2021–2026 Flavio A. C. Martins
+
+This product includes software developed by Flavio A. C. Martins
+(https://github.com/EngFlavioMartins/voronoi-coherent-structures).
+
+Under the Apache License 2.0 (section 4d), any redistribution of this software or of a
+derivative work must include this NOTICE file.
+
+If you use this software in academic work, please cite:
+
+    Martins, F. A. C. and Rival, D. E. (2021). A Voronoi-tessellation-based approach for detection of coherent structures in sparsely-seeded flows. arXiv:2103.09884. https://doi.org/10.48550/arXiv.2103.09884
+
+A BibTeX entry is given in README.md, and CITATION.cff provides the citation in other formats.
