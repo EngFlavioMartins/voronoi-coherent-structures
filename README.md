@@ -1,5 +1,13 @@
 # Voronoi coherent structures
 
+<p align="center">
+  <a href="https://github.com/EngFlavioMartins/voronoi-coherent-structures/actions/workflows/tests.yml"><img src="https://github.com/EngFlavioMartins/voronoi-coherent-structures/actions/workflows/tests.yml/badge.svg" alt="Python checks"></a>
+  <a href="https://doi.org/10.48550/arXiv.2103.09884"><img src="https://img.shields.io/badge/paper-10.48550%2FarXiv.2103.09884-1F6FEB" alt="paper: 10.48550/arXiv.2103.09884"></a>
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white" alt="python: 3.10+"></a>
+  <a href="https://github.com/EngFlavioMartins/voronoi-coherent-structures/blob/HEAD/LICENSE"><img src="https://img.shields.io/badge/license-MIT-2E7D32" alt="license: MIT"></a>
+  <a href="https://engflaviomartins.github.io/#voronoi-coherence"><img src="https://img.shields.io/badge/website-research%20page-15212B" alt="website: research page"></a>
+</p>
+
 **Coherent structures in sparse particle tracks, from persistent Voronoi neighbours.**
 
 <p align="center"><img src="docs/assets/render.webp" width="560" alt="Voronoi cells of 784 double-gyre tracers glowing by neighbour-persistence coherence, with short amber trails of their recent motion"></p>

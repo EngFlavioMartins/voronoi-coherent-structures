@@ -3,6 +3,16 @@ message: "If you use this code, please cite the paper below."
 title: "Voronoi coherent structures"
 type: software
 license: MIT
+abstract: "Detect coherent structures in sparse particle tracks from persistent Voronoi neighbours and spectral clustering, with a double-gyre example (Martins & Rival, arXiv 2103.09884)."
+keywords:
+  - "coherent structures"
+  - "Lagrangian coherent structures"
+  - "Voronoi tessellation"
+  - "spectral clustering"
+  - "particle tracking"
+  - "double gyre"
+  - "sparse data"
+  - "Python"
 authors:
   - family-names: Martins
     given-names: Flavio A. C.
