@@ -2,7 +2,7 @@
 
 **Coherent structures in sparse particle tracks, from persistent Voronoi neighbours.**
 
-![Voronoi cells of 784 double-gyre tracers glowing by neighbour-persistence coherence, with short amber trails of their recent motion](docs/assets/render.webp)
+<p align="center"><img src="docs/assets/render.webp" width="560" alt="Voronoi cells of 784 double-gyre tracers glowing by neighbour-persistence coherence, with short amber trails of their recent motion"></p>
 
 Tracers that stay Voronoi neighbours over time move together. This package counts those shared edges and turns them into one colour per tracer, without choosing a number of clusters. It is a new Python implementation; the example flow is the analytic double gyre.
 

@@ -16,7 +16,7 @@ import onda_style as style  # noqa: E402
 from paraview.simple import Glyph, Show, Tube, XMLPolyDataReader  # noqa: E402
 
 out = Path(sys.argv[1])
-width, height = (int(a) for a in (sys.argv[2:4] if len(sys.argv) > 3 else (2400, 1500)))
+width, height = (int(a) for a in (sys.argv[2:4] if len(sys.argv) > 3 else (3600, 2250)))
 DATA = HERE.parents[1] / "outputs" / "render"
 
 view = style.setup_view(width, height)
